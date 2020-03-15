@@ -14,9 +14,7 @@ import {
     leaveChannel as serviceLeaveChannel,
 } from 'mattermost-redux/actions/channels';
 import {
-    getPosts,
     getPostsBefore,
-    getPostsSince,
     getPostThread,
 } from 'mattermost-redux/actions/posts';
 import {getFilesForPost} from 'mattermost-redux/actions/files';
@@ -56,6 +54,7 @@ import telemetry from 'app/telemetry';
 import {isDirectChannelVisible, isGroupChannelVisible, isDirectMessageVisible, isGroupMessageVisible, isDirectChannelAutoClosed} from 'app/utils/channels';
 import {buildPreference} from 'app/utils/preferences';
 
+import {getPosts, getPostsSince} from './post';
 import {forceLogoutIfNecessary} from './user';
 
 const MAX_RETRIES = 3;
